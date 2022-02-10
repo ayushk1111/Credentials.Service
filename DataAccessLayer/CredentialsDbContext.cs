@@ -14,11 +14,6 @@ namespace Credentials.Service.DataAccessLayer
         {
 
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Credentials;Trusted_Connection=false;User ID=GOMEZIA\Ayush Kumar Jha;pwd=mjolnir;ConnectRetryCount=0",
-                    options => options.EnableRetryOnFailure());
-        }
 
         public DbSet<UserCredential> UserCredentials { get; set; }
         public DbSet<UserAccount> UserAccounts { get; set; }
